@@ -8,4 +8,6 @@ router.get("/profile" , productController.profile);
 
 router.get("/edit" , productController.edit);
 
+router.get("/results/:id?" , productController.results);
+
 module.exports = router;

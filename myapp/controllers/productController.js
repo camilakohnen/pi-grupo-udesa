@@ -1,4 +1,4 @@
-
+const producto = require("../db/productos");
 
 let productController = {
     edit : function(req, res) {
@@ -9,6 +9,9 @@ let productController = {
     },
     product : function(req, res) {
         res.render('product');
+    },
+    results : function(req, res) {
+        res.render('search-results', {lista : producto.filtrarId(id)});
     },
 };
 
