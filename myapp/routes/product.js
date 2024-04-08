@@ -4,8 +4,6 @@ var productController = require("../controllers/productController");
 
 router.get("/" , productController.product);
 
-router.get("/profile" , productController.profile);
-
 router.get("/edit" , productController.edit);
 
 router.get("/results/:id?" , productController.results);
