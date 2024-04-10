@@ -1,16 +1,16 @@
 
 let indexController = {
     index : function(req, res, next) {
-        res.render('index.ejs');
+        res.render('index' , {lista: productos.lista});
       },
     register : function (req, res) {
-        res.render('register.ejs');
+        res.render('register');
     },
     login : function (req, res) {
-      res.render('login.ejs');
+      res.render('login');
     },
     product : function (req, res) {
-      res.render('product.ejs');
+      res.render('product');
     },
 };
 
