@@ -11,12 +11,13 @@
 				<a href="/product/edit">Editar</a>
 			</p>
 		</div>
+		<% for (let i = 0; i < lista.length; i++) { %>
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
 					<img src="<%= lista[i].imagen %>" alt="" class="product-detail-img">
 					<p class="product-detail-description">
-						<%= lista[i].descripcion %></p>
+						<%= lista.descripcion %></p>
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
@@ -30,7 +31,7 @@
 							</div>
 						</article>
 						<% } %>
-
+		<% } %>
 					</section>
 					<form class="form" action="" method="POST">
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
