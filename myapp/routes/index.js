@@ -11,7 +11,7 @@ router.get("/index" , indexController.index);
 
 router.get("/login" , indexController.login);
 
-router.get("/product" , indexController.product);
+router.get("/product/:id" , indexController.product);
 
 
 module.exports = router;

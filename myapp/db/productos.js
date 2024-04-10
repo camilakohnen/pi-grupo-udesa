@@ -3,6 +3,7 @@ const usuarios = require("../db/usuarios");
 let producto = {
     lista : [
         {
+        id : 1,
         nombre: "Mezcla de café premium",
         imagen: "images/premium-blend-beans.jpg",
         descripcion: "Nuestra mezcla signature de granos de café, perfecta para cualquier amante del café.",
@@ -26,6 +27,7 @@ let producto = {
       },
 
       {
+        id : 2,
         nombre: "Taza de café con logo",
         imagen: "images/logo-mug.jpg",
         descripcion: "Disfruta de tu bebida favorita en esta taza elegante con nuestro logo.",
@@ -49,6 +51,7 @@ let producto = {
       },
 
       {
+        id : 3,
         nombre: "Camiseta de café",
         imagen: "images/coffee-tshirt.jpg",
         descripcion: "Lleva tu amor por el café en tu manga con esta camiseta cómoda.",
@@ -72,6 +75,7 @@ let producto = {
       },
 
       {
+        id : 4,
         nombre: "Adhesivo de café",
         imagen: "images/coffee-sticker.jpg",
         descripcion: "Decora tu portátil o botella de agua con este pegatina genial.",
@@ -94,7 +98,8 @@ let producto = {
           ]
       },
 
-      {
+      {        
+        id : 5,
         nombre: "Bolsa de tela de café",
         imagen: "images/coffee-tote-bag.jpg",
         descripcion: "Lleva tus compras o portátil en esta bolsa de tela elegante.",
@@ -118,6 +123,7 @@ let producto = {
       },
 
       {
+        id : 6,
         nombre: "Calentador de taza de café",
         imagen: "images/mug-warmer.jpg",
         descripcion: "Mantén tu café caliente mientras trabajas con este calentador de taza de café.",
@@ -141,6 +147,7 @@ let producto = {
       },
 
       {
+        id : 7,
         nombre: "Delantal de café",
         imagen: "images/apron.jpg",
         descripcion: "Mantente limpio mientras preparas café con este delantal de barista.",
@@ -164,6 +171,7 @@ let producto = {
       },
 
       {
+        id : 8,
         nombre: "Molinillo de café manual",
         imagen: "images/manual-grinder.jpg",
         descripcion: "Tritura tus propios granos de café con este molinillo de café manual.",
@@ -187,6 +195,7 @@ let producto = {
       },
 
       {
+        id : 9,
         nombre: "Máquina de café de goteo",
         imagen: "images/pour-over.jpg",
         descripcion: "Prepara la taza perfecta de café con esta máquina de café de goteo.",
@@ -210,6 +219,7 @@ let producto = {
       },
 
       {
+        id : 10,
         nombre: "Prensa francesa de café",
         imagen: "images/french-press.jpg",
         descripcion: "Prepara una taza rica y sabrosa de café con esta prensa francesa.",
@@ -231,7 +241,17 @@ let producto = {
             }
           ]
       }
-    ]
+    ],
+
+    filtrarID : function(id){
+        let filtrado = [];
+        for (let i = 0; i < this.lista.length; i++) {
+            if (id==this.lista[i].id){
+                filtrado.push(this.lista[i])
+            }
+            
+        }
+    }
 }
 
 

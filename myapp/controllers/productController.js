@@ -8,7 +8,7 @@ let productController = {
         res.render('profile');
     },
     product : function(req, res) {
-        res.render('product', {lista: producto.filtrarProducto(id)});
+        res.render('product');
     },
     results : function(req, res) {
         res.render('search-results', {lista : producto.filtrarId(id)});

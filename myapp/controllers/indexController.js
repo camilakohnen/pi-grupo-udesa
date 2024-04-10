@@ -1,3 +1,4 @@
+const productos = require("../db/productos");
 
 let indexController = {
     index : function(req, res, next) {
@@ -10,7 +11,7 @@ let indexController = {
       res.render('login');
     },
     product : function (req, res) {
-      res.render('product');
+      res.render('product', {lista: productos.filtrarID(id)});
     },
 };
 
