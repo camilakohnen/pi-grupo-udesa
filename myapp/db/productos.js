@@ -5,7 +5,7 @@ let producto = {
         {
         id : 1,
         nombre: "Mezcla de café premium",
-        imagen: "images/premium-blend-beans.jpg",
+        imagen: "../images/products/nescafegold.jpg",
         descripcion: "Nuestra mezcla signature de granos de café, perfecta para cualquier amante del café.",
         comentarios: [
             {
@@ -29,7 +29,7 @@ let producto = {
       {
         id : 2,
         nombre: "Taza de café con logo",
-        imagen: "images/logo-mug.jpg",
+        imagen: "../images/products/tasaconlogo.jpg",
         descripcion: "Disfruta de tu bebida favorita en esta taza elegante con nuestro logo.",
         comentarios: [
             {
@@ -53,7 +53,7 @@ let producto = {
       {
         id : 3,
         nombre: "Camiseta de café",
-        imagen: "images/coffee-tshirt.jpg",
+        imagen: "../images/products/remera.jpg",
         descripcion: "Lleva tu amor por el café en tu manga con esta camiseta cómoda.",
         comentarios: [
             {
@@ -77,7 +77,7 @@ let producto = {
       {
         id : 4,
         nombre: "Adhesivo de café",
-        imagen: "images/coffee-sticker.jpg",
+        imagen: "../images/products/adhesivodecafe.jpg",
         descripcion: "Decora tu portátil o botella de agua con este pegatina genial.",
         comentarios: [
             {
@@ -101,7 +101,7 @@ let producto = {
       {        
         id : 5,
         nombre: "Bolsa de tela de café",
-        imagen: "images/coffee-tote-bag.jpg",
+        imagen: "../images/products/bolsacafe.jpg",
         descripcion: "Lleva tus compras o portátil en esta bolsa de tela elegante.",
         comentarios: [
             {
@@ -125,7 +125,7 @@ let producto = {
       {
         id : 6,
         nombre: "Calentador de taza de café",
-        imagen: "images/mug-warmer.jpg",
+        imagen: "../images/products/calentador.jpg",
         descripcion: "Mantén tu café caliente mientras trabajas con este calentador de taza de café.",
         comentarios: [
             {
@@ -149,7 +149,7 @@ let producto = {
       {
         id : 7,
         nombre: "Delantal de café",
-        imagen: "images/apron.jpg",
+        imagen: "../images/products/delantal.jpg",
         descripcion: "Mantente limpio mientras preparas café con este delantal de barista.",
         comentarios: [
             {
@@ -173,7 +173,7 @@ let producto = {
       {
         id : 8,
         nombre: "Molinillo de café manual",
-        imagen: "images/manual-grinder.jpg",
+        imagen: "../images/products/molinillo.avif",
         descripcion: "Tritura tus propios granos de café con este molinillo de café manual.",
         comentarios: [
             {
@@ -197,7 +197,7 @@ let producto = {
       {
         id : 9,
         nombre: "Máquina de café de goteo",
-        imagen: "images/pour-over.jpg",
+        imagen: "../images/products/maquinaporgoteo.jpg",
         descripcion: "Prepara la taza perfecta de café con esta máquina de café de goteo.",
         comentarios: [
             {
@@ -221,7 +221,7 @@ let producto = {
       {
         id : 10,
         nombre: "Prensa francesa de café",
-        imagen: "images/french-press.jpg",
+        imagen: "../images/products/prensafrancesa.jpg",
         descripcion: "Prepara una taza rica y sabrosa de café con esta prensa francesa.",
         comentarios: [
             {

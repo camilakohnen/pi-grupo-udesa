@@ -11,27 +11,40 @@
 				<a href="/product/edit">Editar</a>
 			</p>
 		</div>
-		<% for (let i = 0; i < lista.length; i++) { %>
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="<%= lista[i].imagen %>" alt="" class="product-detail-img">
-					<p class="product-detail-description">
-						<%= lista.descripcion %></p>
+					<img src="../images/products/tasaconlogo.jpg" alt="" class="product-detail-img">
+					<p class="product-detail-description"> Disfruta de tu bebida favorita en esta taza elegante con nuestro logo.</p>
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
-						<% for (let ii = 0; ii < lista[i].comentarios.length; ii++) { %>								
+
 						<article>
-							<img src="<%= lista[i].comentarios[ii].foto %>" alt="">
+							<img src="../images/usuarios/Marcelo.jpeg" alt="">
 							<div class="data">
 								<p class="user">
-								<strong> <a href="/profile"> <%= lista[i].comentarios[ii].usuario %> </a> </strong>
-									<%= lista[i].comentarios[ii].comentario %>
+								<strong> <a href="/profile"> Marcelo %> </a> </strong>
+									Esta taza de café es genial. Tiene un diseño moderno y elegante que me encanta. La calidad es excelente y el logo se ve genial. ¡Gracias!
 							</div>
 						</article>
-						<% } %>
-		<% } %> 
+
+						<article>
+							<img src="../images/usuarios/Eduardo.jpeg" alt="">
+							<div class="data">
+								<p class="user">
+								<strong> <a href="/profile"> Eduardo %> </a> </strong>
+									Me encanta esta taza de café. Es perfecta para tomar mi café por la mañana. La calidad es excelente y el logo se ve genial. ¡La recomiendo!							</div>
+						</article>
+
+						<article>
+							<img src="../images/usuarios/Maria.jpeg" alt="">
+							<div class="data">
+								<p class="user">
+								<strong> <a href="/profile"> Maria %> </a> </strong>
+									Esta taza de café es simplemente increíble. Tiene un diseño moderno y elegante que me encanta. La calidad es excelente y el logo se ve genial. ¡La recomiendo encarecidamente!							</div>
+						</article>
+
 					</section>
 					<form class="form" action="" method="POST">
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario">

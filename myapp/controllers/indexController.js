@@ -12,7 +12,7 @@ let indexController = {
     },
     product : function (req, res) {
       let id = req.params.id;
-      res.render('product', {lista: productos.filtrarID(id)});
+      res.render('product');
     },
 };
 
