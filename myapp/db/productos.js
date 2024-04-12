@@ -98,28 +98,28 @@ let producto = {
           ]
       },
 
-      {        
-        id : 5,
-        nombre: "Bolsa de tela de café",
-        imagen: "../images/products/bolsacafe.jpg",
-        descripcion: "Lleva tus compras o portátil en esta bolsa de tela elegante.",
+      { id : 5,
+        nombre: "Máquina de café de goteo",
+        imagen: "../images/products/maquinaporgoteo.jpg",
+        descripcion: "Prepara la taza perfecta de café con esta máquina de café de goteo.",
         comentarios: [
             {
-              usuario: usuarios.lista[0].nombre,
-              foto: usuarios.lista[0].fotoPerfil,
-              comentario: "Esta bolsa de tela de café es genial. Tiene un diseño moderno y elegante que me encanta. La calidad es excelente y es perfecta para llevar mis cosas. ¡Gracias!",
+              usuario: usuarios.lista[3].nombre,
+              foto: usuarios.lista[3].fotoPerfil,
+              comentario: "Esta máquina de café de goteo es genial. Tiene un diseño moderno y elegante que me encanta. La calidad es excelente y es perfecta para hacer café en casa. ¡Gracias!",
+            },
+            {
+              usuario: usuarios.lista[1].nombre,
+              foto: usuarios.lista[1].fotoPerfil,
+              comentario: "Me encanta esta máquina de café de goteo. Es perfecta para hacer café en casa o en el trabajo. La calidad es excelente y se ve genial. ¡La recomiendo!",
             },
             {
               usuario: usuarios.lista[2].nombre,
               foto: usuarios.lista[2].fotoPerfil,
-              comentario: "Me encanta esta bolsa de tela de café. Es perfecta para llevar mis cosas al trabajo o a casa. La calidad es excelente y se ve genial. ¡La recomiendo!",
-            },
-            {
-              usuario: usuarios.lista[3].nombre,
-              foto: usuarios.lista[3].fotoPerfil,
-              comentario: "Esta bolsa de tela de café es simplemente increíble. Tiene un diseño moderno y elegante que me encanta. La calidad es excelente y es perfecta para llevar mis cosas. ¡La recomiendo encarecidamente!",
+              comentario: "Esta máquina de café de goteo es simplemente increíble. Tiene un diseño moderno y elegante que me encanta. La calidad es excelente y es perfecta para hacer café en casa o en el trabajo. ¡La recomiendo encarecidamente!",
             }
-          ]
+          ]    
+        
       },
 
       {
@@ -194,28 +194,28 @@ let producto = {
           ]
       },
 
-      {
-        id : 9,
-        nombre: "Máquina de café de goteo",
-        imagen: "../images/products/maquinaporgoteo.jpg",
-        descripcion: "Prepara la taza perfecta de café con esta máquina de café de goteo.",
+      { id : 9,
+        nombre: "Bolsa de tela de café",
+        imagen: "../images/products/bolsacafe.jpg",
+        descripcion: "Lleva tus compras o portátil en esta bolsa de tela elegante.",
         comentarios: [
             {
-              usuario: usuarios.lista[3].nombre,
-              foto: usuarios.lista[3].fotoPerfil,
-              comentario: "Esta máquina de café de goteo es genial. Tiene un diseño moderno y elegante que me encanta. La calidad es excelente y es perfecta para hacer café en casa. ¡Gracias!",
-            },
-            {
-              usuario: usuarios.lista[1].nombre,
-              foto: usuarios.lista[1].fotoPerfil,
-              comentario: "Me encanta esta máquina de café de goteo. Es perfecta para hacer café en casa o en el trabajo. La calidad es excelente y se ve genial. ¡La recomiendo!",
+              usuario: usuarios.lista[0].nombre,
+              foto: usuarios.lista[0].fotoPerfil,
+              comentario: "Esta bolsa de tela de café es genial. Tiene un diseño moderno y elegante que me encanta. La calidad es excelente y es perfecta para llevar mis cosas. ¡Gracias!",
             },
             {
               usuario: usuarios.lista[2].nombre,
               foto: usuarios.lista[2].fotoPerfil,
-              comentario: "Esta máquina de café de goteo es simplemente increíble. Tiene un diseño moderno y elegante que me encanta. La calidad es excelente y es perfecta para hacer café en casa o en el trabajo. ¡La recomiendo encarecidamente!",
+              comentario: "Me encanta esta bolsa de tela de café. Es perfecta para llevar mis cosas al trabajo o a casa. La calidad es excelente y se ve genial. ¡La recomiendo!",
+            },
+            {
+              usuario: usuarios.lista[3].nombre,
+              foto: usuarios.lista[3].fotoPerfil,
+              comentario: "Esta bolsa de tela de café es simplemente increíble. Tiene un diseño moderno y elegante que me encanta. La calidad es excelente y es perfecta para llevar mis cosas. ¡La recomiendo encarecidamente!",
             }
           ]
+        
       },
 
       {

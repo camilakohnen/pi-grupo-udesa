@@ -1,17 +1,21 @@
-const producto = require("../db/productos");
+const productos = require("../db/productos");
 
 let productController = {
     edit : function(req, res) {
         res.render('product-add');
     },
     profile : function(req, res) {
-        res.render('profile');
+        res.render('profile', {lista: productos.lista});
     },
     product : function(req, res) {
         res.render('product');
     },
     results : function(req, res) {
-        res.render('search-results', {lista : producto.filtrarId(id)});
+        let id = productos.lista.id
+        res.render('search-results');
+    },
+    add : function(req, res) {
+        res.render('product-add');
     },
 };
 

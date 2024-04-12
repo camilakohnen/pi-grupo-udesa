@@ -10,12 +10,50 @@
 				<h2 class="products-title">Resultados de búsqueda</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá van los resultados de búsqueda. <br>
-			Eliminen estás líneas y cosntruyan la página de resultados de búsqueda. <br>
-			////////////////
-			</h2>
-
-
+			<div class="product-detail">
+				<div class="row">
+					<article class="col-12 col-lg-8 product-detail-info">
+						<img src="/images/products/tasaconlogo.jpg" alt="" class="product-detail-img">
+						<p class="product-detail-description"> Disfruta de tu bebida favorita en esta taza elegante con nuestro logo.</p>
+					</article>
+					<div class="col-12 col-lg-4">
+						<section class="comments">
+	
+							<article>
+								<img src="/images/usuarios/Marcelo.jpeg" alt="">
+								<div class="data">
+									<p class="user">
+									<strong> <a href="/profile"> Marcelo %> </a> </strong>
+										Esta taza de café es genial. Tiene un diseño moderno y elegante que me encanta. La calidad es excelente y el logo se ve genial. ¡Gracias!
+								</div>
+							</article>
+	
+							<article>
+								<img src="/images/usuarios/Eduardo.jpeg" alt="">
+								<div class="data">
+									<p class="user">
+									<strong> <a href="/profile"> Eduardo %> </a> </strong>
+										Me encanta esta taza de café. Es perfecta para tomar mi café por la mañana. La calidad es excelente y el logo se ve genial. ¡La recomiendo!							</div>
+							</article>
+	
+							<article>
+								<img src="/images/usuarios/Maria.jpeg" alt="">
+								<div class="data">
+									<p class="user">
+									<strong> <a href="/profile"> Maria %> </a> </strong>
+										Esta taza de café es simplemente increíble. Tiene un diseño moderno y elegante que me encanta. La calidad es excelente y el logo se ve genial. ¡La recomiendo encarecidamente!							</div>
+							</article>
+	
+						</section>
+						<form class="form" action="/product" method="GET">
+							<input class="form-input" type="text" value="" placeholder="Agregar comentario">
+							<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+						</form>
+						<hr>
+					</div>
+				</div>
+			</div>
+		</div>
 	<%- include('./partials/footer') %>
 
 </body>
