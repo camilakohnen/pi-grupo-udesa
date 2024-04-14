@@ -15,6 +15,8 @@
 
 
 /*====== Basics ======*/
+
+
 * {
   box-sizing: border-box;
 }
@@ -29,7 +31,7 @@ body {
 body {
   font-family: var(--base-font-family);
   font-weight: 300;
-  background-color: var(--light-gray);
+  background-color: #2e1503;
 }
 
 ul,
@@ -41,8 +43,7 @@ ol {
 
 a {
   display: inline-block;
-  text-decoration: none;
-  color: inherit;
+  color: gray;
 }
 
 figure {
@@ -64,11 +65,21 @@ hr {
   border-bottom: solid 1px var(--light-gray);
 }
 
+li{
+  color:white
+}
 
 /*====== Main Header ======*/
+.fjalla-one-regular {
+  font-family: "Fjalla One", sans-serif;
+  font-weight:bold;
+  font-style: normal;
+
+}
+
 .main-header {
   padding: 15px 0;
-  background-color: var(--yellow);
+  background-color: white
 }
 
 .main-header_home-link,
@@ -127,8 +138,8 @@ hr {
   display: none;
 }
 
-.left-navbar,
-.right-navbar {
+.left-navbar a,
+.right-navbar a{
   font-size: 1.5em;
 }
 
@@ -147,15 +158,14 @@ hr {
 .right-navbar a {
   display: block;
   padding: 5px 0;
-  border-bottom: solid 1px var(--gray);
+  border-bottom: none;
 }
 
 
 
 /*====== Banner ======*/
 .banner {
-  background-image: url(/images/img-home-banner.jpg);
-  background-repeat: no-repeat;
+
   background-size: cover;
   background-position: center center;
   height: 100px;
@@ -171,7 +181,9 @@ hr {
 .products-title {
   font-size: 2.4em;
   font-weight: 400;
-  color: var(--gray);
+  color: white;
+  font-family: "Libre Baskerville", serif;
+  font-style: normal;
 }
 
 .product-box {
@@ -202,6 +214,8 @@ hr {
   font-size: 2.4em;
   font-weight: 300;
   margin: 0;
+  font-family: "Libre Baskerville", serif;
+  font-style: normal;
 }
 
 .product-box_data span {
@@ -219,6 +233,8 @@ hr {
   height: 0;
   transition: 300ms;
   overflow: hidden;
+  font-family: "Libre Baskerville", serif;
+  font-style: normal;
 }
 
 .product-box_data i {
@@ -269,7 +285,7 @@ hr {
 }
 
 .footer-data i {
-  color: var(--light-blue);
+  color: #2e1503;
   font-size: 3.5em;
 }
 
@@ -313,7 +329,10 @@ hr {
 .product-detail-info {
   border-right: 1px solid var(--light-gray);
   padding: 15px;
-  /* height: 100%; */
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
 }
 
 .product-detail-title {
@@ -325,6 +344,11 @@ hr {
   padding: 15px 15px 15px 40px;
   font-size: 1.8em;
   line-height: 1.5;
+  font-family: "Dosis", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  
 }
 
 .product-detail-price {
@@ -369,9 +393,9 @@ hr {
 }
 
 .buy-now-button {
-  background-color: var(--light-blue);
+  background-color: #2e1503;
   font-size: 1.6em;
-  color: #ffffff;
+  color:white;
   padding: 15px;
   border-radius: 8px;
   border: none;
@@ -413,16 +437,26 @@ hr {
 }
 .comments .data{
   width: 85%;
-  
+
 }
 .comments p{
   font-size: 1.5em;
   margin-top: 0;
 }
-.comments .user{
+.comments.user{
   font-size: 1.7em;
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
 }
+p.user{
+  font-family: "Noto Sans TC", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 
+}
 /*====== Formularios ======*/
 .form-label {
   display: inline-block;
@@ -454,6 +488,15 @@ textarea.form-input {
 }
 
 /*====== Profile ======*/
+
+.form input {
+  margin: 5px;
+}
+
+.form label{
+  color: #ffffff;
+}
+
 .info-usuario{
   border-bottom: 1px solid #ccc;
   padding-bottom: 30px;
@@ -467,10 +510,11 @@ textarea.form-input {
 .main-title{
   font-size: 25px;
   margin-bottom: 10px;
+  color: white
 }
 
 .btn{
-  background-color: #1259c3;
+  background-color: rgb(155, 97, 22);
   padding: 10px 20px;
   border-radius: 4px;
   color: #fff;
@@ -501,10 +545,7 @@ textarea.form-input {
     justify-content: space-between;
   }
 
-  .left-navbar a,
-  .right-navbar a {
-    border-bottom: none;
-  }
+
 
   .left-navbar a:hover,
   .right-navbar a:hover {
@@ -528,3 +569,4 @@ textarea.form-input {
     margin: auto;
   }
 }
+
