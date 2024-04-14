@@ -70,7 +70,7 @@ INSERT INTO productos VALUES (DEFAULT, 4, "remera.jpg", "Camiseta de café", "Ll
 
 INSERT INTO productos VALUES (DEFAULT, 5, "adhesivodecafe.jpg", "Adhesivo de café", "Decora tu portátil o botella de agua con este pegatina genial.", DEFAULT, DEFAULT, DEFAULT);
 
-INSERT INTO productos VALUES (DEFAULT, 1, "bolsacafe.jpg", "Bolsa de tela de café", "Lleva tus compras o portátil en esta bolsa de tela elegante.", DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, 5, "maquinaporgoteo.jpg", "Máquina de café de goteo", "Prepara la taza perfecta de café con esta máquina de café de goteo.", DEFAULT, DEFAULT, DEFAULT);
 
 INSERT INTO productos VALUES (DEFAULT, 2, "calentador.jpg", "Calentador de taza de café", "Mantén tu café caliente mientras trabajas con este calentador de taza de café.", DEFAULT, DEFAULT, DEFAULT);
 
@@ -78,7 +78,7 @@ INSERT INTO productos VALUES (DEFAULT, 3, "delantal.jpg", "Delantal de café", "
 
 INSERT INTO productos VALUES (DEFAULT, 4, "molinillo.avif", "Molinillo de café manual", "Tritura tus propios granos de café con este molinillo de café manual.", DEFAULT, DEFAULT, DEFAULT);
 
-INSERT INTO productos VALUES (DEFAULT, 5, "maquinaporgoteo.jpg", "Máquina de café de goteo", "Prepara la taza perfecta de café con esta máquina de café de goteo.", DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, 1, "bolsacafe.jpg", "Bolsa de tela de café", "Lleva tus compras o portátil en esta bolsa de tela elegante.", DEFAULT, DEFAULT, DEFAULT);
 
 INSERT INTO productos VALUES (DEFAULT, 1, "prensafrancesa.jpg", "Prensa francesa de café", "Prepara una taza rica y sabrosa de café con esta prensa francesa.", DEFAULT, DEFAULT, DEFAULT);
 
