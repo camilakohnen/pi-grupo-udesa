@@ -11,7 +11,7 @@ var profileRouter = require('./routes/profile');
 
 var app = express();
 
-// view engine setup
+// view engine setup test profe 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
