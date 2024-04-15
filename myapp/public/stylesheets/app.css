@@ -344,10 +344,7 @@ li{
   padding: 15px 15px 15px 40px;
   font-size: 1.8em;
   line-height: 1.5;
-  font-family: "Dosis", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: weight;
-  font-style: normal;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   
 }
 
@@ -452,10 +449,7 @@ li{
   font-style: normal;
 }
 p.user{
-  font-family: "Noto Sans TC", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 /*====== Formularios ======*/
 .form-label {
