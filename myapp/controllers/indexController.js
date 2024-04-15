@@ -9,11 +9,7 @@ let indexController = {
     },
     login : function (req, res) {
       res.render('login');
-    },
-    product : function (req, res) {
-      let id = req.params.id;
-      res.render('product');
-    },
+    }
 };
 
 module.exports = indexController;
