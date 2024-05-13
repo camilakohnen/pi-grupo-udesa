@@ -1,4 +1,11 @@
-const data = require("../db/data");
+const data = require("../database/models");
+
+db.Productos.findAll()
+.then((results)=>{
+  return res.render("index")
+}).catch((err)=>{
+
+})
 
 let indexController = {
     index : function(req, res, next) {
