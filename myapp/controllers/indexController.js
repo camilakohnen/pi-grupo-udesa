@@ -1,18 +1,23 @@
 const db = require("../database/models");
 
-
-
 let indexController = {
-  index: function (req, res, next) {
+  index: function (req, res) {
+        let criterio = {
+            include: [
+                {association: "usuario" },
+                {association: "producto"},
+            ] 
+        }
 
-    db.Comentario.findAll()
-      .then((results) => {
-        return res.send(results)
-        return res.render("index")
-      }).catch((err) => {
-          return console.log(err);
-      })
-  },
+        db.Comentario.findAll(criterio)
+          .then((results) => {
+            //return res.send(results);
+            return res.render("index", {"lista": db});
+          }).catch((err) => {
+              return console.log(err);
+          })
+        },
+
   register: function (req, res) {
     res.render('register');
   },
