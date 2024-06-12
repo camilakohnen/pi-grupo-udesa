@@ -22,12 +22,11 @@ let productController = {
 
         db.Producto.findByPk(id, criterio)
         .then((results)=> {
-            return res.send(results);
+         //   return res.send(results);
+            return res.render("product", {lista: db})
         }).catch((err) => {
              return console.log(err);
          });
-
-         // product', {producto: data.productos[0]}
 
     },
     results : function(req, res) {

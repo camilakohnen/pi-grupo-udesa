@@ -1,12 +1,15 @@
 <%- include('./partials/head') %>
 
 <body>
-	<%- include('./partials/header') %>
-
+	<% if (locals.user != undefined) { %>
+		<%- include('./partials/headerLogueado') %>
+	<% } else { %>
+		<%- include('./partials/header') %>
+	<% } %>
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title"> <%= producto.nombre %> </h2> 
+			<h2 class="products-title"> <%= lista.Producto.nombreproducto %> </h2> 
 			<p class="product-detail-description">
 				<a href="/product/edit">Editar</a>
 			</p>
@@ -14,18 +17,18 @@
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="<%= producto.imagen %>" alt="" class="product-detail-img">
-					<p class="product-detail-description"> <%= producto.descripcion %> </p>
+					<img src="<%= lista.Producto.fotoProducto %>" alt="" class="product-detail-img">
+					<p class="product-detail-description"> <%= lista.Producto.descripcionProducto %> </p>
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
-						<% for (let i = 0; i < producto.comentarios.length; i++) { %>
+						<% for (let i = 0; i < lista.Usuario.length; i++) { %>
 							<article>
-								<img src= <%=producto.comentarios[i].foto%> alt="">
+								<img src= <%=lista.Usuario[i].fotoUsuario%> alt="">
 								<div class="data">
 									<p class="user">
-									<strong> <a href="/profile"> <%= producto.comentarios[i].usuario %> </a> </strong>
-										<%= producto.comentarios[i].comentario %>
+									<strong> <a href="/profile"> <%= lista.Usuario.mail %> </a> </strong>
+										<%= lista.Comentario.textoComentrio %>
 								</div>
 							</article>
 						<% } %> 

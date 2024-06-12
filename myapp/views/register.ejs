@@ -1,9 +1,11 @@
 <%- include('./partials/head') %>
 
-
 <body>
-	<%- include('./partials/header') %>
-
+	<% if (locals.user != undefined) { %>
+		<%- include('./partials/headerLogueado') %>
+	<% } else { %>
+		<%- include('./partials/header') %>
+	<% } %>
 
 	<!-- Novedades -->
 	<div class="container products-wrapper">
@@ -12,7 +14,7 @@
 				<h2 class="products-title">Registrate</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<form class="form" action="/login" method="get">
+			<form class="form" action="/login" method="POST">
 				<div>
 					<label>Email:</label><input type="email" name="mail" id="" required>
 				</div>

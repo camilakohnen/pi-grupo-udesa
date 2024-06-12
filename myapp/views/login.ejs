@@ -2,8 +2,11 @@
 
 
 <body>
-	<%- include('./partials/header') %>
-
+	<% if (locals.user != undefined) { %>
+		<%- include('./partials/headerLogueado') %>
+	<% } else { %>
+		<%- include('./partials/header') %>
+	<% } %>
 
 	<!-- Novedades -->
 	<div class="container products-wrapper">
@@ -12,7 +15,7 @@
 				<h2 class="products-title">Ingresar</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<form class="form" action="/index" method="get">
+			<form class="form" action="/login" method="get">
 				<div>
 					<label>Usuario:</label><input type="text" name="usuario" id="" required>
 				</div>

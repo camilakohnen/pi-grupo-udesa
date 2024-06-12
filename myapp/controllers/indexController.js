@@ -23,6 +23,19 @@ let indexController = {
   },
   login: function (req, res) {
     res.render('login');
+  },
+  store: function(req, res) {
+    let form = req.body;
+    db.Usuario.create(form)
+    .then((result) => {
+        return res.redirect("/product")
+    }).catch((err) => {
+        return console.log(err);
+    });
+  },
+  logOut: function(req, res) {
+    req.session.destroy();
+    return res.redirect("/")
   }
 };
 
