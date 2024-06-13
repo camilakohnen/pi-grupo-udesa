@@ -17,18 +17,33 @@
 			<form class="form" action="/login" method="POST">
 				<div>
 					<label>Email:</label><input type="email" name="mail" id="" required>
+					<% if(locals.errores && errores.mail) { %>
+						<p> <%= errores.mail %></p>
+					<% } %>
 				</div>
 				<div>
 					<label>Usuario:</label><input type="text" name="usuario" id="" required>
+					<% if(locals.errores && errores.usuario) { %>
+						<p> <%= errores.usuario %></p>
+					<% } %>
 				</div>
 				<div>
 					<label>Contraseña:</label><input type="password" name="contraseña" id="" required>
+					<% if(locals.errores && errores.contraseña) { %>
+						<p> <%= errores.contraseña %></p>
+					<% } %>
 				</div>
 				<div>
 					<label>Fecha de nacimiento:</label><input type="date" name="nacimiento" id="" required>
+					<% if(locals.errores && errores.nacimiento) { %>
+						<p> <%= errores.nacimiento %></p>
+					<% } %>
 				</div>
 				<div>
 					<label>Numero de documento:</label><input type="number" name="documento" id="" required>
+					<% if(locals.errores && errores.documento) { %>
+						<p> <%= errores.documento %></p>
+					<% } %>
 				</div>
 				<div>
 					<label>Foto de perfil:</label><input type="file" name="foto" id="">
