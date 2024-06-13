@@ -25,29 +25,32 @@ let indexController = {
   },
 
   store: function (req, res) {
-    let form = req.body;
-    let errores = ExpressValidator(req);
+    let errores = validationResult(req);
     if (errores.isEmpty()) {
       let form = req.body ;
       let user = {
-          usuario: form.usuario,
           mail: form.mail,
-          contraseña: bcrypt.hashSync(form.contraseña, 10)
+          usuario: form.usuario,
+          contrasenia: bcrypt.hashSync(form.contrasenia, 10),
+          fecha: form.fecha,
+          dni : form.dni,
+          fotoUsuario: form.fotoUsuario
       }
+      db.Usuario.create(user)
+      .then((result) => {
+        return res.redirect("/login");
+      }).catch((err) => {
+        return console.log(err);
+      });
     }else{
         return res.render("register", {
           errores: errores.mapped(),
           old:req.body
         })
-      }
-    db.Usuario.create(user)
-    .then((result) => {
-      return res.redirect("/login");
-    }).catch((err) => {
-      return console.log(err);
-    });
-  },
-  
+      }
+
+  },
+
   login: function (req, res) {
     res.render('login');
   },

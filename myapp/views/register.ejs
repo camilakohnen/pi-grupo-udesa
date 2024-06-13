@@ -14,7 +14,7 @@
 				<h2 class="products-title">Registrate</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<form class="form" action="/login" method="POST">
+			<form class="form" action="/register" method="POST">
 				<div>
 					<label>Email:</label><input type="email" name="mail" id="" required>
 					<% if(locals.errores && errores.mail) { %>
@@ -26,27 +26,27 @@
 					<% if(locals.errores && errores.usuario) { %>
 						<p> <%= errores.usuario %></p>
 					<% } %>
-				</div>
+				</div> 
 				<div>
-					<label>Contraseña:</label><input type="password" name="contraseña" id="" required>
-					<% if(locals.errores && errores.contraseña) { %>
-						<p> <%= errores.contraseña %></p>
+					<label>Contraseña:</label><input type="password" name="contrasenia" id="" required>
+					<% if(locals.errores && errores.contrasenia) { %>
+						<p> <%= errores.contrasenia %></p>
 					<% } %>
 				</div>
 				<div>
-					<label>Fecha de nacimiento:</label><input type="date" name="nacimiento" id="" required>
-					<% if(locals.errores && errores.nacimiento) { %>
-						<p> <%= errores.nacimiento %></p>
+					<label>Fecha de nacimiento:</label><input type="date" name="fecha" id="" required>
+					<% if(locals.errores && errores.fecha) { %>
+						<p> <%= errores.fecha %></p>
 					<% } %>
 				</div>
 				<div>
-					<label>Numero de documento:</label><input type="number" name="documento" id="" required>
-					<% if(locals.errores && errores.documento) { %>
-						<p> <%= errores.documento %></p>
+					<label>Numero de documento:</label><input type="number" name="dni" id="" required>
+					<% if(locals.errores && errores.dni) { %>
+						<p> <%= errores.dni %></p>
 					<% } %>
 				</div>
 				<div>
-					<label>Foto de perfil:</label><input type="file" name="foto" id="">
+					<label>Foto de perfil:</label><input type="file" name="fotoUsuario" id="">
 				</div>
 				<div>
 					<button type="submit">Enviar</button>
