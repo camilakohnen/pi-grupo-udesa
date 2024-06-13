@@ -15,12 +15,22 @@
 				<h2 class="products-title">Ingresar</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<form class="form" action="/login" method="get">
+			<form class="form" action="/login" method="POST">
 				<div>
-					<label>Usuario:</label><input type="text" name="usuario" id="" required>
+					<label>Mail:</label><input type="text" name="mail" id="mail" value="<%= locals.old && old.mail ? old.mail : "" %>" required>
+					<% if (locals.errores) { %>
+						<% for (let error in errores) {%>
+							<p> <%= errores[error].msg %></p>
+						<% } %>
+					<% } %>
 				</div>
 				<div>
-					<label>Contraseña:</label><input type="password" name="contraseña" id="" required>
+					<label>Contraseña:</label><input type="password" name="contrasenia" id="contrasenia" required>
+					<% if (locals.errores) { %>
+						<% for (let error in errores) {%>
+							<p> <%= errores[error].msg %></p>
+						<% } %>
+					<% } %>
 				</div>
 				<div>
 					<label><input type="checkbox" id="recordarme" value="recordarme" /> Recordarme </label>

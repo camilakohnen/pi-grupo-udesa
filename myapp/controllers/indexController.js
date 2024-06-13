@@ -1,4 +1,4 @@
-const { ExpressValidator } = require("express-validator");
+const { validationResult } = require("express-validator");
 const db = require("../database/models");
 const bcrypt = require("bcryptjs");
 
@@ -6,15 +6,15 @@ let indexController = {
   index: function (req, res) {
         let criterio = {
             include: [
-                {association: "usuario" },
-                {association: "producto"},
+                {association: "usuarios" },
+                {association: "comentario" },
             ] 
         }
 
-        db.Comentario.findAll(criterio)
+        db.Producto.findAll(criterio)
           .then((results) => {
-            //return res.send(results);
-            return res.render("index", {"lista": db});
+           // return res.send(results);
+            return res.render("index", {"lista": results});
           }).catch((err) => {
               return console.log(err);
           })
@@ -47,22 +47,39 @@ let indexController = {
       return console.log(err);
     });
   },
-
+  
   login: function (req, res) {
     res.render('login');
   },
 
- store: function(req, res) {
-    let form = req.body;
-    db.Usuario.create(form)
-    .then((result) => {
-        return res.redirect("/product")
-    }).catch((err) => {
-        return console.log(err);
-    });
+  loginpost: function (req, res) {
+      let errores = validationResult(req);
+      let form = req.body;
+      let filtrar = {
+          where: [{mail: form.mail}]
+      };
+      db.Usuario.findOne(filtrar)
+      .then((result) => {
+          if (result == null) 
+            return res.render("login", {errores: errores.mapped(), old: req.body});
+            let check = bcrypt.compareSync(form.contrasenia, result.contrasenia);
+            if (check) {
+              req.session.user = result;
+              if (form.recordarme != undefined) {
+                  res.cookie("userId", result.id, {maxAge: 1000 * 60 * 15});
+              }
+              return res.redirect("/");
+            } else {
+              return res.render("login", {errores: errores.mapped(), old: req.body})
+            }
+      }).catch((err) => {
+          return console.log(err);
+      });
   },
+
   logOut: function(req, res) {
     req.session.destroy();
+    res.clearCookie("userId")
     return res.redirect("/")
   }
 };
