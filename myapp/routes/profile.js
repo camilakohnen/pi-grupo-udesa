@@ -58,7 +58,7 @@ router.post("/register" , validacionesRegistracion, profileController.store);
 
 router.get("/login" , profileController.login);
 
-router.post("/login" , validacionesLogin, indexController.loginpost);
+router.post("/login" , validacionesLogin, profileController.loginpost);
 
 router.post('/logout', profileController.logOut);
 
