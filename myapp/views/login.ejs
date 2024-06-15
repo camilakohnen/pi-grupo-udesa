@@ -15,7 +15,7 @@
 				<h2 class="products-title">Ingresar</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<form class="form" action="/login" method="POST">
+			<form class="form" action="/profile/login" method="POST">
 				<div>
 					<label>Mail:</label><input type="text" name="mail" id="mail" value="<%= locals.old && old.mail ? old.mail : "" %>" required>
 					<% if (locals.errores) { %>
