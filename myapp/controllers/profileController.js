@@ -24,6 +24,7 @@ let profileController = {
          });
         // res.render('profile', {lista: db.productos, usuario : db.usuario});
     },
+
     edit : function(req, res) {
         res.render('profile-edit', {usuario : db.usuario});
     },
@@ -32,7 +33,7 @@ let profileController = {
         res.render('register');
       },
     
-      store: function (req, res) {
+    store: function (req, res) {
         let errores = validationResult(req);
         if (errores.isEmpty()) {
           let form = req.body ;
@@ -57,11 +58,36 @@ let profileController = {
             })
           }
     
-      },
+      },
 
     login: function (req, res) {
         res.render('login');
       },
+
+    loginpost: function (req, res) {
+        let errores = validationResult(req);
+        let form = req.body;
+        let filtrar = {
+            where: [{mail: form.mail}]
+        };
+        db.Usuario.findOne(filtrar)
+        .then((result) => {
+            if (result == null) 
+              return res.render("login", {errores: errores.mapped(), old: req.body});
+              let check = bcrypt.compareSync(form.contrasenia, result.contrasenia);
+              if (check) {
+                req.session.user = result;
+                if (form.recordarme != undefined) {
+                    res.cookie("userId", result.id, {maxAge: 1000 * 60 * 15});
+                }
+                return res.redirect("/");
+              } else {
+                return res.render("login", {errores: errores.mapped(), old: req.body})
+              }
+        }).catch((err) => {
+            return console.log(err);
+        });
+    },
 
     logOut: function(req, res) {
         req.session.destroy();
@@ -69,4 +95,5 @@ let profileController = {
         return res.redirect("/")
       }
 }
+
 module.exports = profileController;

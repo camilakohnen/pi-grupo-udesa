@@ -5,9 +5,11 @@ let productController = {
     edit : function(req, res) {
         res.render('product-add', {usuario : db.usuario});
     },
+
     profile : function(req, res) {
         res.render('profile', {lista: db.productos});
     },
+
     product : function(req, res) {
 
         let id = req.params.id;
@@ -29,6 +31,7 @@ let productController = {
          });
 
     },
+
     results : function(req, res) {
         let id = req.params.id;
         let criterio = {
@@ -48,9 +51,11 @@ let productController = {
          
         // res.render('search-results', {lista : db.productos});
     },
+
     add : function(req, res) {
         res.render('product-add', {usuario : db.usuario});
     },
+    
 };
 
 module.exports = productController;

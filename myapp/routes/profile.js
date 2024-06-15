@@ -23,6 +23,31 @@ let validacionesRegistracion = [
       .isLength({min:7}).withMessage("Debe ingresar un documento válido"),
   ]
 
+  let validacionesLogin = [
+    body("mail")
+        .custom(function(results){
+            return db.Usuario.findOne({
+                where: {mail: results},
+            })
+            .then(function(mail){
+                if (!mail){
+                    throw new Error("El mail ingresado no existe")
+                }
+            })
+        }),
+    body("contrasenia")
+        .custom(function(results){
+            return db.Usuario.findOne({
+                where: {contrasenia: results}, 
+            })
+            .then(function(contrasenia){
+                if (contrasenia == undefined){
+                    throw new Error("La contraseña ingresada no existe")
+                }
+            })
+        })
+]
+
 router.get("/id/:id" , profileController.profile);
 
 router.get("/edit" , profileController.edit);
@@ -32,6 +57,8 @@ router.get("/register" , profileController.register);
 router.post("/register" , validacionesRegistracion, profileController.store);
 
 router.get("/login" , profileController.login);
+
+router.post("/login" , validacionesLogin, indexController.loginpost);
 
 router.post('/logout', profileController.logOut);
 
