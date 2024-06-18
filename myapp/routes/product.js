@@ -14,18 +14,26 @@ let validacionesProducto = [
       .notEmpty().withMessage("Debe ponerle una descripcion a su producto").bail(),
   ];
 
-  router.get("/id/:id" , productController.product);
+let validacionesComentario = [
+    body("textoComentario")
+    .notEmpty().withMessage("Debe ingresar un comentario").bail()
+    .isLength({min : 3}).withMessage("Debe ingresar un comentario mas largo"),
+];
 
-  router.post("/id/:id" , validacionesComentario, productController.comment);
+router.get("/id/:id" , productController.product);
 
-  router.get("/edit/id/:id" , productController.edit);
+router.post("/id/:id" , validacionesComentario, productController.comment);
+
+router.get("/edit/id/:id" , productController.edit);
+
+router.post("/edit/id/:id" , validacionesProducto, productController.editPost);
+
+router.get("/searchResults" , productController.searchResults);
+
+router.get("/add/:id" , productController.add);
   
-  router.post("/edit/id/:id" , validacionesProducto, productController.editPost);
-  
-  router.get("/searchResults" , productController.searchResults);
-  
-  router.get("/add/:id" , productController.add);
-  
-  router.post("/add/:id" ,validacionesProducto, productController.addPost);
+router.post("/add/:id" ,validacionesProducto, productController.addPost);
+
+router.post("/delete/id/:id" , productController.delete);
 
 module.exports = router;

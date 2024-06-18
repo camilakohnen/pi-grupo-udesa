@@ -16,37 +16,26 @@
 			<!-- Show the "ultimos" products -->
 			<form class="form" action="/profile/register" method="POST">
 				<div>
-					<label>Email:</label><input type="email" name="mail" id="" required>
-					<% if(locals.errores && errores.mail) { %>
-						<p> <%= errores.mail %></p>
+					<% if (locals.errores) { %>
+						<% for (let error in errores) {%>
+							<p style="color:wheat; font-size: 15px;" > <%= errores[error].msg %></p>
+						<% } %>
 					<% } %>
 				</div>
 				<div>
-					<label>Usuario:</label><input type="text" name="usuario" id="" required>
-					<% if(locals.errores && errores.usuario) { %>
-						<p> <%= errores.usuario %></p>
-					<% } %>
-				</div> 
+					<label>Email:</label><input type="email" name="mail" id="mail" value="<%= locals.old && old.mail ? old.mail : "" %>" required>
+				</div>
 				<div>
 					<label>Contraseña:</label><input type="password" name="contrasenia" id="" required>
-					<% if(locals.errores && errores.contrasenia) { %>
-						<p> <%= errores.contrasenia %></p>
-					<% } %>
 				</div>
 				<div>
-					<label>Fecha de nacimiento:</label><input type="date" name="fecha" id="" required>
-					<% if(locals.errores && errores.fecha) { %>
-						<p> <%= errores.fecha %></p>
-					<% } %>
+					<label>Fecha de nacimiento:</label><input type="date" name="fecha" id="fecha" value="<%= locals.old && old.mail ? old.fecha : "" %>" required>
 				</div>
 				<div>
-					<label>Numero de documento:</label><input type="number" name="dni" id="" required>
-					<% if(locals.errores && errores.dni) { %>
-						<p> <%= errores.dni %></p>
-					<% } %>
+					<label>Numero de documento:</label><input type="number" name="dni" id="dni" value="<%= locals.old && old.mail ? old.dni : "" %>" required>
 				</div>
 				<div>
-					<label>Foto de perfil:</label><input type="file" name="fotoUsuario" id="">
+					<label>Foto de perfil:</label><input type="text" name="fotoUsuario" value="<%= locals.old && old.mail ? old.fotoUsuario : "" %>" id="">
 				</div>
 				<div>
 					<button type="submit">Enviar</button>

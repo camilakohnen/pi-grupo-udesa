@@ -46,10 +46,19 @@
 						
 
 					</section>
-					<form class="form" action="" method="GET">
-						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
-						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-					</form>
+					<% if (locals.user != null) { %>
+						<form class="form" action="/product/id/<%= lista.id %>" method="POST">
+							<input class="form-input" type="text" name="textoComentario" value="" placeholder="Agregar comentario">
+							<% if (locals.errores) { %>
+								<% for (let error in errores) {%>
+									<p style="color:wheat; font-size: 15px;"> <%= errores[error].msg %></p>
+								<% } %>
+							<% } %>
+							<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+						</form>
+						<% } else { %>
+							<p style= "color:rgb(0, 0, 0); font-size: 15px;">Debe estar logueado para comentar</p>
+					<% } %>
 					<hr>
 				</div>
 			</div>

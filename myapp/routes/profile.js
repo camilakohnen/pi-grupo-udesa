@@ -6,21 +6,29 @@ const { body } = require ("express-validator");
 const db = require("../database/models")
 
 let validacionesRegistracion = [
-  body("usuario")
-    .notEmpty().withMessage("Debe completar el nombre").bail()
-    .isLength({min:5}).withMessage("El nombre debe ser más largo"),
-  body("mail")
-    .notEmpty().withMessage("Debe completar el mail").bail()
-    .isEmail().withMessage("Debe completar con un email válido"),
-  body("contrasenia")
-    .notEmpty().withMessage("Debe poner una contraseña").bail()
-    .isLength({min:4}).withMessage("La contraseña debe ser más larga"),
-  body("fecha")
-    .notEmpty().withMessage("Debe completar este campo").bail(),
-  body("dni")
-    .notEmpty().withMessage("Debe completar el documento").bail()
-    .isLength({min:7}).withMessage("Debe ingresar un documento válido"),
+    body("mail")
+      .notEmpty().withMessage("Debe completar el mail").bail()
+      .isEmail().withMessage("Debe completar con un email válido")
+      .custom(function(results){
+        return db.Usuario.findOne({
+            where: {mail: results},
+        })
+        .then(function(mail){
+            if (mail){
+                throw new Error("El mail ingresado ya existe")
+            }
+        })
+    }),
+    body("contrasenia")
+      .notEmpty().withMessage("Debe poner una contraseña").bail()
+      .isLength({min:4}).withMessage("La contraseña debe ser más larga"),
+    body("fecha")
+      .notEmpty().withMessage("Debe completar este campo").bail(),
+    body("dni")
+      .notEmpty().withMessage("Debe completar el documento").bail()
+      .isLength({min:7}).withMessage("Debe ingresar un documento válido"),
 ]
+
 let validacionesLogin = [
     body("mail")
         .custom(function(results){
