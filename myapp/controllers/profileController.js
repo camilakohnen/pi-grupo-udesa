@@ -57,6 +57,36 @@ let profileController = {
     edit : function(req, res) {
         res.render('profile-edit', {usuario : db.usuario});
     },
+
+    editPost: function(req, res) {
+      let iD = req.params.id;
+      let errores = validationResult(req);
+      if (errores.isEmpty()) {
+        let form = req.body ;
+        let user = {
+            mail : form.mail,
+            fecha : form.fecha,
+            dni : form.dni,
+            fotoUsuario : form.fotoUsuario,
+        }
+        if (form.contrasenia && form.contrasenia.length >= 4) {
+          user.contrasenia = bcrypt.hashSync(form.contrasenia, 10);
+        }
+        db.Usuario.update(user, {where : {id : iD}})
+          .then((results) => {
+            return db.Usuario.findByPk(iD);
+          })
+          .then((updatedUser) => {
+            req.session.user = updatedUser;
+            return res.redirect("/index");
+          })
+          .catch((err) => {
+            return console.log(err);
+          });
+      } else {
+          return res.render("profile-edit", {errores: errores.mapped(), old:req.body });
+      }
+    },
   
     register: function (req, res) {
       res.render('register');

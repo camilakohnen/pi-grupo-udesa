@@ -54,9 +54,24 @@ let validacionesLogin = [
         })
 ]
 
+let validacionesEdit = [
+    body("mail")
+      .isEmail().withMessage("Debe completar con un email válido").bail(),
+    body("contrasenia")
+      .optional({ checkFalsy: true })
+      .isLength({min:4}).withMessage("Para cambiar la contraseña debe ingresar una más larga"),
+    body("fecha")
+      .notEmpty().withMessage("Debe completar este campo").bail(),
+    body("dni")
+      .notEmpty().withMessage("Debe completar el documento").bail()
+      .isLength({min:7}).withMessage("Debe ingresar un documento válido"),
+  ]
+
 router.get("/id/:id" , profileController.profile);
 
-router.get("/edit" , profileController.edit);
+router.get("/edit/:id" , profileController.edit);
+
+router.post("/edit/:id" , validacionesEdit, profileController.editPost);
 
 router.get("/register" , profileController.register);
 

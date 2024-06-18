@@ -14,24 +14,29 @@
 				<h2 class="products-title">Editar mi perfil</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<form class="form" action="/index" method="get">
+			<form class="form" action="/profile/edit/<%= locals.user.id %>" method="POST">
 				<div>
-					<label>Email:</label><input type="email" name="mail" id="" required>
+					<% if (locals.errores) { %>
+						<% for (let error in errores) {%>
+							<p style="color:wheat; font-size: 15px;"> <%= errores[error].msg %></p>
+						<% } %>
+					<% } %>
 				</div>
 				<div>
-					<label>Usuario:</label><input type="text" name="usuario" id="" required>
+					<label>Email:</label><input type="email" name="mail" id="mail" value="<%= locals.user.mail %>" >
 				</div>
 				<div>
-					<label>Contraseña:</label><input type="password" name="contraseña" id="" required>
+					<label>Contraseña:</label><input type="password" name="contrasenia" id="contrasenia" >
 				</div>
 				<div>
-					<label>Fecha de nacimiento:</label><input type="date" name="nacimiento" id="" required>
+					<label>Fecha de nacimiento:</label><input type="date" name="fecha" id="fecha" value="<%= locals.user.fecha  %>" >
 				</div>
 				<div>
-					<label>Numero de documento:</label><input type="number" name="documento" id="" required>
+					<label>Numero de documento:</label><input type="number" name="dni" id="dni" value="<%= locals.user.dni  %>" >
+
 				</div>
 				<div>
-					<label>Foto de perfil:</label><input type="file" name="foto" id="">
+					<label>Foto de perfil:</label><input type="text" name="fotoUsuario" id="fotoUsuario" value="<%= locals.user.fotoUsuario  %>" >
 				</div>
 				<div>
 					<button type="submit">Enviar</button>
