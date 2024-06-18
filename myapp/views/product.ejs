@@ -1,33 +1,44 @@
 <%- include('./partials/head') %>
 
 <body>
+
 	<% if (locals.user != undefined) { %>
-		<%- include('./partials/headerLogueado') %>
+		<%- include("./partials/headerLogueado") %>
 	<% } else { %>
 		<%- include('./partials/header') %>
 	<% } %>
+
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title"> <%= lista.nombreproducto %> </h2> 
+			<h2 class="products-title"> <%= lista.nombreProducto %> </h2> 
 			<p class="product-detail-description">
-				<a href="/product/edit">Editar</a>
+			<% if (locals.user) { %>
+					<% if (locals.user.mail === lista.usuarios.mail) { %>
+						<a href="/product/edit/id/<%=lista.id%>">Editar</a>
+						<form action="/product/delete/id/ <%= lista.id %>" method="POST">
+							<a href="/product/delete/id/ <%= lista.id %>"> <button type="submit">Eliminar</button></a>
+						</form>
+
+					<% } %>
+			<% } %>
 			</p>
 		</div>
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="<%= lista.fotoProducto %>" alt="" class="product-detail-img">
-					<p class="product-detail-description"> <%= lista.descripcionProducto %> </p>
+					<img src= "/images/products/<%= lista.fotoProducto %>" alt="" class="product-detail-img">
+					<p class="product-detail-description"> <a href="/profile/id/<%= lista.idUsuarios%>"> <strong> <%= lista.usuarios.mail %> : </strong> </a> <%= lista.descripcionProducto %> </p>
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
 						<% for (let i = 0; i < lista.comentario.length; i++) { %>
 							<article>
-								<img src= <%=lista.comentario[i].usuario.fotoUsuario%> alt="">
+								<img src= "/images/usuarios/<%=lista.comentario[i].usuario.fotoUsuario%> "alt="">
 								<div class="data">
 									<p class="user">
-									<strong> <a href="/profile"> <%= lista.comentario[i].usuario.mail %> </a> </strong>
+									<strong> <a href="/profile/id/<%= lista.comentario[i].idUsuario %>">
+										<%= lista.comentario[i].usuario.mail %> </a> </strong>
 										<%= lista.comentario[i].textoComentario %>
 								</div>
 							</article>

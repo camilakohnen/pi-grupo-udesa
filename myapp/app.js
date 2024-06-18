@@ -26,12 +26,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
   secret: "myapp",
   resave: false,
-  saveUninitialized: true 
+  saveUninitialized: true
 })); 
 
 app.use(function(req, res, next) {
   if (req.session.user != undefined) {
-    res.locals.user = req.session.userLogueado;
+    res.locals.user = req.session.user;
   }
   return next();
 });
@@ -40,7 +40,7 @@ app.use(function(req, res, next) {
   
   if (req.cookies.userId != undefined && req.session.user == undefined) {
     let idUsuario = req.cookies.userId; 
-    db.User.findByPk(idUsuario)
+    db.Usuario.findByPk(idUsuario)
     .then((result) => {
       req.session.user = result;
       res.locals.user = result;

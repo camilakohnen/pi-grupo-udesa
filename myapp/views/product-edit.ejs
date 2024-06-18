@@ -1,0 +1,56 @@
+<%- include('./partials/head') %>
+
+<body>
+	<% if (locals.user != undefined) { %>
+		<%- include('./partials/headerLogueado') %>
+	<% } else { %>
+		<%- include('./partials/header') %>
+	<% } %>
+
+	<!-- Novedades -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Editar productos</h2>
+			</div>
+			<!-- Show the "ultimos" products -->
+			<h2 class="col-12">
+				<% if (locals.user) { %>
+					<% if(locals.user != undefined) { %>
+					<form class="form" action="/product/edit/id/<%= lista.id %>" method="POST">
+						<div>
+							<% if (locals.errores) { %>
+								<% for (let error in errores) {%>
+									<p style="color:wheat; font-size: 15px;"> <%= errores[error].msg %></p>
+								<% } %>
+							<% } %>
+						</div>
+						<div>
+							<label> Imagen: </label><input type="text" name="fotoProducto" id="fotoProducto"  >
+						</div>
+						<div>
+							<label> Nombre del Producto: </label><input type="text" name="nombreProducto" id="nombreProducto"  >
+						</div>
+						<div>
+							<label> Descripción: </label><input type="text" name="descripcionProducto" id="descripcionProducto"  >
+						</div>
+						<div>
+							<button type="submit">Enviar</button>
+						</div>
+					</form>
+				<% } %>
+				<% } else { %>
+					<div>
+							<p style="color:wheat; font-size: 15px;">Debes registrarte para poder editar un producto</p>
+					</div>
+				<% } %>
+			</h2>
+		</div>
+
+	</div>
+
+
+<%- include('./partials/footer') %>
+</body>
+
+</html>

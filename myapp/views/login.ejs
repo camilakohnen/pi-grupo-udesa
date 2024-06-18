@@ -17,23 +17,20 @@
 			<!-- Show the "ultimos" products -->
 			<form class="form" action="/profile/login" method="POST">
 				<div>
+					<% if (locals.errores) { %>
+						<% for (let error in errores) {%>
+							<p style="color:wheat; font-size: 15px;"> <%= errores[error].msg %></p>
+						<% } %>
+					<% } %>
+				</div>
+				<div>
 					<label>Mail:</label><input type="text" name="mail" id="mail" value="<%= locals.old && old.mail ? old.mail : "" %>" required>
-					<% if (locals.errores) { %>
-						<% for (let error in errores) {%>
-							<p> <%= errores[error].msg %></p>
-						<% } %>
-					<% } %>
 				</div>
 				<div>
-					<label>Contraseña:</label><input type="password" name="contrasenia" id="contrasenia" required>
-					<% if (locals.errores) { %>
-						<% for (let error in errores) {%>
-							<p> <%= errores[error].msg %></p>
-						<% } %>
-					<% } %>
+					<label>Contraseña:</label><input type="password" name="contrasenia" id="contrasenia" >
 				</div>
 				<div>
-					<label><input type="checkbox" id="recordarme" value="recordarme" /> Recordarme </label>
+					<label><input type="checkbox" name="recordarme" id="recordarme" value="recordarme" /> Recordarme </label>
 				</div>
 				<div>
 					<button type="submit">Enviar</button>

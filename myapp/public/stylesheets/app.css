@@ -15,7 +15,11 @@
 
 
 /*====== Basics ======*/
-
+.hola {
+  color: black; 
+  font-size: 18px; 
+  font-family: 'Font Awesome 5 Free', 
+}
 
 * {
   box-sizing: border-box;
