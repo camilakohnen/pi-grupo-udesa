@@ -24,7 +24,7 @@ let profileController = {
             return console.log(err);
          });
 
-        },
+    },
 
     register: function (req, res) {
         res.render('register');
@@ -87,7 +87,7 @@ let profileController = {
           return res.render("profile-edit", {errores: errores.mapped(), old:req.body });
       }
     },
-  
+
     register: function (req, res) {
       res.render('register');
     },
@@ -125,7 +125,7 @@ let profileController = {
       } else {
         return res.render("login")
       }
-      },
+    },
 
     loginpost: function (req, res) {
         let errores = validationResult(req);

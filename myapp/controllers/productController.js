@@ -4,10 +4,9 @@ const { validationResult } = require("express-validator");
 const op = db.Sequelize.Op;
 
 let productController = {
-    edit : function(req, res, next) {
-      let id = req.params.id
-      let filtrado = {include : [{association : "usuarios"}]}
-      db.Producto.findByPk(id, filtrado)
+    edit : function(req, res) {
+      let iD = req.params.id;
+      db.Producto.findByPk(iD)
       .then(function(result){
         return res.render('product-edit', {"lista" : result});
       })
@@ -33,7 +32,10 @@ let productController = {
           });
         }else{         
           //return res.send(errores)
-          return res.render("product-edit", {errores: errores.mapped(), lista:req.body });
+          db.Producto.findByPk(iD, {include : [{association : "usuarios"}]})
+          .then(function(result){
+            return res.render("product-edit", {errores: errores.mapped(), lista:result });
+          })
         }
     },
 
@@ -92,7 +94,7 @@ let productController = {
         db.Producto.findAll(filtrado)
         .then(function(result) {
             if (result.length == 0) {
-                return res.send('No hay resultados para su criterio de búsqueda');
+                return res.render('search-results', {"result": result});
             } else {
                 return res.render('search-results', {"result": result}); }
         }).catch(function(error) {

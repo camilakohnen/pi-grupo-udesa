@@ -11,6 +11,9 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
+				<% if (result.length == 0) { %>
+					<p class="products-title"> No hay resultados para tu busqueda </p>
+				<% } else { %>
 				<h2 class="products-title">Resultados de búsqueda</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
@@ -30,6 +33,7 @@
 						</a>
 					</section>
 				</div>
+			<% } %>
 			<% } %>
 	<%- include('./partials/footer') %>
 
