@@ -30,7 +30,7 @@
 								<article class="product-box_data">
 									<h2> <%= lista[i].nombreProducto %> </h2>
 									<p> <%= lista[i].descripcionProducto %> </p>
-									<a href="/profile/id/<%= lista[i].idUsuarios %>"> <p><%= %></p>
+									<a href="/profile/id/<%= lista[i].idUsuarios %>"> <p><%= lista[i].usuarios.mail %></p>
 									<p> Comentarios: <%= lista[i].comentario.length %> </p>
 								</article>
 							</a>
@@ -50,7 +50,7 @@
 									<article class="product-box_data">
 										<h2> <%= lista[i].nombreProducto %> </h2>
 										<p> <%= lista[i].descripcionProducto %> </p>
-										<a href="/profile/id/<%= lista[i].idUsuarios %>"> <p><%= lista[i].usuarios %></p></a>
+										<a href="/profile/id/<%= lista[i].idUsuarios %>"> <p><%= lista[i].usuarios.mail %></p></a>
 										<p> Comentarios: <%= lista[i].comentario.length %> </p>
 									</article>
 								</a>

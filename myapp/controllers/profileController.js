@@ -14,7 +14,7 @@ let profileController = {
                     {association: "producto" },
                 ] },
             ],
-            order : [['createdAt', 'DESC']],
+        order : [[{model: db.Producto, as: 'producto'}, 'createdAt', 'DESC']]
         }
         db.Usuario.findByPk(id, criterio)
         .then((results)=> {
@@ -87,37 +87,6 @@ let profileController = {
           return res.render("profile-edit", {errores: errores.mapped(), old:req.body });
       }
     },
-
-    register: function (req, res) {
-      res.render('register');
-    },
-  
-    store: function (req, res) {
-      let errores = validationResult(req);
-      if (errores.isEmpty()) {
-        let form = req.body ;
-        let user = {
-            mail: form.mail,
-            usuario: form.usuario,
-            contrasenia: bcrypt.hashSync(form.contrasenia, 10),
-            fecha: form.fecha,
-            dni : form.dni,
-            fotoUsuario: form.fotoUsuario
-        }
-        db.Usuario.create(user)
-        .then((result) => {
-          return res.redirect("/login");
-        }).catch((err) => {
-          return console.log(err);
-        });
-      }else{
-          return res.render("register", {
-            errores: errores.mapped(),
-            old:req.body
-          })
-        }
-  
-    },
 
     login: function (req, res, next) {
       if (req.session.user != undefined){
