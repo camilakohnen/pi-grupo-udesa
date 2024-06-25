@@ -5,11 +5,15 @@ const op = db.Sequelize.Op;
 
 let productController = {
     edit : function(req, res) {
-      let iD = req.params.id;
-      db.Producto.findByPk(iD)
-      .then(function(result){
-        return res.render('product-edit', {"lista" : result});
-      })
+      if (req.session.user == undefined){
+        return res.redirect("/");
+      } else {
+        let iD = req.params.id;
+        db.Producto.findByPk(iD)
+        .then(function(result){
+          return res.render('product-edit', {"lista" : result});
+        })
+    }
     },
 
     editPost : function (req, res) {
@@ -104,7 +108,11 @@ let productController = {
     },
 
     add : function(req, res) {
+      if (req.session.user == undefined){
+        return res.redirect("/");
+      } else {
         res.render('product-add', {usuario : db.usuario});
+      }
     },
 
     addPost: function (req, res) {

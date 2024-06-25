@@ -15,8 +15,6 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12">
-				<% if (locals.user) { %>
-					<% if(locals.user != undefined) { %>
 					<form class="form" action="/product/edit/id/<%= lista.id %>" method="POST">
 						<div>
 							<% if (locals.errores) { %>
@@ -38,12 +36,6 @@
 							<button type="submit">Enviar</button>
 						</div>
 					</form>
-				<% } %>
-				<% } else { %>
-					<div>
-							<p style="color:wheat; font-size: 15px;">Debes registrarte para poder editar un producto</p>
-					</div>
-				<% } %>
 			</h2>
 		</div>
 
