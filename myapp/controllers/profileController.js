@@ -59,7 +59,11 @@ let profileController = {
     },
 
     edit : function(req, res) {
+      if (req.session.user == undefined) {
+        res.redirect("/")
+      }else{
         res.render('profile-edit', {usuario : db.usuario});
+      }
     },
 
     editPost: function(req, res) {
