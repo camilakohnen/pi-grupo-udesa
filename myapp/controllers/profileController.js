@@ -27,7 +27,11 @@ let profileController = {
     },
 
     register: function (req, res) {
-        res.render('register');
+        if (req.session.user != undefined){
+          return res.redirect("/");
+        } else {
+          res.render('register');
+        }
     },
         
     store: function (req, res) {
